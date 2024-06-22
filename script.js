@@ -48,6 +48,17 @@ const displayAverageSalary = function (employeesArray) {
 // Select a random employee
 const getRandomEmployee = function (employeesArray) {
   // TODO: Select and display a random employee
+  // Check if the array is empty
+  if (employeesArray.length === 0) {
+    console.log('No employees available for the drawing.');
+    return;
+  }
+  // generate random employee
+  // reference for this line of code 58 (https://stackoverflow.com/questions/5915096/get-a-random-item-from-a-javascript-array)
+  const randomIndex = Math.floor(Math.random() * employeesArray.length); 
+
+  const randomEmployee = employeesArray[randomIndex];
+  console.log(`Congratulations to ${randomEmployee.firstName} ${randomEmployee.lastName}, our random drawing winner!`);
 };
 
 /*
