@@ -3,60 +3,46 @@ const addEmployeesBtn = document.querySelector('#add-employees-btn');
 
 // Collect employee data
 const collectEmployees = function () {
-  // TODO: Get user input to create and return an array of employee objects.
-  // I need to initialize an empty array.
   const employees = [];
-  // I need to use a loop to continueously prompt the user for employee data until they want to stop. in this case 'While' loop is better. 
+
   let newEmployees = true;
   while (newEmployees) {
     const firstName = prompt('Enter the first name:');
     const lastName = prompt('Enter the last name:');
-    const salary = parseFloat(prompt('Enter the salary:')); // parseFloat to convert input to a number.
+    const salary = parseFloat(prompt('Enter the salary:')); // parseFloat to convert input to a number
 
-  // For the salary, the input has to be valid. In this if statement every variables have to satisfy the conditions then
   if (firstName && lastName && !isNaN(salary)) {
     // Create employee object with collected data from ther user.
     const employee = { firstName, lastName, salary };
-    // and then add the employee object to the array.
-    employees.push(employee);
+    employees.push(employee); //Add the employee object to the array.
   } else {
     alert('Invalid input. Please enter valid details for the employee.');
   }
-  // need a check if the user wants to add more employee.
   newEmployees = confirm('Would you like to add new employee?');
 }
-// user has finished inputting data then return the array of employee objects.
   return employees;
 };
 
 // Display the average salary
 const displayAverageSalary = function (employeesArray) {
-  // TODO: Calculate and display the average salary
-  // Check if the array is empty
+  // Check if array is empty
   if (employeesArray.length === 0) {
     console.log('No employees available.');
     return;
   }
-  // calculate total salary using reduce() (reference from https://stackoverflow.com/questions/1230233/how-to-find-the-sum-of-an-array-of-numbers)
   const totalSalary = employeesArray.reduce((total, employee) => total + employee.salary, 0);
-  // divide total salary by number of employees
-  const averageSalary = totalSalary / employeesArray.length;
-  // and then display the average salary
+  const averageSalary = (totalSalary / employeesArray.length).toFixed(2); // Limit to 2 decimal points
   console.log(`The average employee salary between our ${employeesArray.length} employee(s) is $${averageSalary}`);
 };
 
 // Select a random employee
 const getRandomEmployee = function (employeesArray) {
-  // TODO: Select and display a random employee
-  // Check if the array is empty
+  // Check if array is empty
   if (employeesArray.length === 0) {
     console.log('No employees available for the drawing.');
     return;
   }
-  // generate random employee
-  // reference for this line of code 58 (https://stackoverflow.com/questions/5915096/get-a-random-item-from-a-javascript-array)
   const randomIndex = Math.floor(Math.random() * employeesArray.length); 
-
   const randomEmployee = employeesArray[randomIndex];
   console.log(`Congratulations to ${randomEmployee.firstName} ${randomEmployee.lastName}, our random drawing winner!`);
 };
