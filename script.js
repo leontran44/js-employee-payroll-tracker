@@ -3,7 +3,30 @@ const addEmployeesBtn = document.querySelector('#add-employees-btn');
 
 // Collect employee data
 const collectEmployees = function () {
-  // TODO: Get user input to create and return an array of employee objects
+  // TODO: Get user input to create and return an array of employee objects.
+  // I need to initialize an empty array.
+  const employees = [];
+  // I need to use a loop to continueously prompt the user for employee data until they want to stop. in this case 'While' loop is better. 
+  let newEmployees = true;
+  while (newEmployees) {
+    const firstName = prompt('Enter the first name:');
+    const lastName = prompt('Enter the last name:');
+    const salary = parseFloat(prompt('Enter the salary:')); // parseFloat to convert input to a number.
+
+  // For the salary, the input has to be valid. In this if statement every variables have to satisfy the conditions then
+  if (firstName && lastName && !isNaN(salary)) {
+    // Create employee object with collected data from ther user.
+    const employee = { firstName, lastName, salary };
+    // and then add the employee object to the array.
+    employees.push(employee);
+  } else {
+    alert('Invalid input. Please enter valid details for the employee.');
+  }
+  // need a check if the user wants to add more employee.
+  newEmployees = confirm('Would you like to add new employee?');
+}
+// user has finished inputting data then return the array of employee objects.
+  return employees;
 };
 
 // Display the average salary
