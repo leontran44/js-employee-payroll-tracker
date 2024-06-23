@@ -18,14 +18,15 @@ This repository is contributed to modify starter code modify starter code to cre
 To successfully solve the challenge, codes were written into 3 main functions:
 
 ### collectEmployees():
-    - creates a new employee object by collecting first name, last name, and salary.
-    - creates multiple employee objects by collecting first name, last name, and salary for each employee.
+
+- creates a new employee object by collecting first name, last name, and salary.
+- creates multiple employee objects by collecting first name, last name, and salary for each employee.
 
 ### displayAverageSalary()
-    - Log the salary of each employee and calculate average salary.
+- Log the salary of each employee and calculate average salary.
 
 ### getRandomEmployee()
-    - Selecting a random employee from collected data, and logging congratulation message.
+- Selecting a random employee from collected data, and logging congratulation message.
 
 ## Final Product
 
