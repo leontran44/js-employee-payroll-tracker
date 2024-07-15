@@ -43,6 +43,8 @@ To successfully solve the challenge, codes were written into 3 main functions:
 
 2. The user can navigate to the three sections of the webpage (About, Work, and Contact) by using links in the navigation bar located at the top of the page. Project images link to work examples when clicked. Links in the contact section take you to the corresonding websites (Gmail, GitHub, and LinkedIn).
 
+3. Click on this link https://leontran44.github.io/js-employee-payroll-tracker/ to access to the deployment webpage.
+
 ## License
 [MIT License](https://opensource.org/licenses/MIT)
 
